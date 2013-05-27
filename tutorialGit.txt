@@ -1,0 +1,10 @@
+Tutorial
+
+- Para adicionar remoto,
+$ git remote add https://github.com/USERNAME/REPOSITORY.git
+
+- Para dar push no commit
+$ git push REMOTE_NAME BRANCH_NAME
+
+- Para colorir o terminal
+$ git config --global color.ui auto
