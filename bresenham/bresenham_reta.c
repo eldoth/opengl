@@ -131,6 +131,12 @@ void bresenham() {
 
 		}
 	} else if ((abs(dy) < abs(dx)) && dx * dy < 0) {
+		if (dy > 0 && dx < 0) {
+			ponto1 = p2;
+			ponto2 = p1;
+			dx *= -1;
+			dy *= -1;
+		}
 		p = 2 * dy + dx;
 		incInf = 2 * dy;
 		incSup = 2 * (dy + dx);
@@ -150,6 +156,12 @@ void bresenham() {
 			}
 		}
 	} else if ((abs(dy) > abs(dx)) && dx * dy < 0) {
+		if (dy < 0 && dx > 0) {
+			ponto1 = p2;
+			ponto2 = p1;
+			dx *= -1;
+			dy *= -1;
+		}
 		p = 2 * dy + dx;
 		incLeft = 2 * dx;
 		incRight = 2 * (dx + dy);
@@ -163,7 +175,7 @@ void bresenham() {
 				p = p + incRight;
 				x--;
 			}
-			y--;
+			y++;
 			setPixel(x, y);
 
 		}
